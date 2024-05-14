@@ -50,18 +50,18 @@ pipeline{
          """   
         }
     }
-    stage("send values")
-    {
-        steps{
-             script{
-                def params = [
-         string(name: 'version', value: "${package_version}"),
-         string(name: 'environment', value: "dev")
-                ]
-        build job: "catalogue-deploy", parameters: params
-        }  
-         }
-    }
+    // stage("send values")
+    // {
+    //     steps{
+    //          script{
+    //             def params = [
+    //      string(name: 'version', value: "${package_version}"),
+    //      string(name: 'environment', value: "dev")
+    //             ]
+    //     build job: "catalogue-deploy", parameters: params
+    //     }  
+    //      }
+    // }
     stage("deploy")
          {
                 steps {
